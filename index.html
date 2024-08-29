@@ -7,7 +7,15 @@
     <title>Léo Merkel</title>
   </head>
   <body>
-  <div class=intro>
+  <div class="menu"> <!-- le menu suivra partout -->
+    <ul>
+      <li><a href="#intro">Accueil</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+  <div id=intro>
     <h1>Welcome to my Page</h1> <!-- va rester qqseconde en page d'accueil pour partir -->
     <div class="names">
       <h2>MERKEL Léo</h2>
@@ -21,7 +29,78 @@
     <a href="mailto:cdf.leo.merkel@gmail.com">Contact par mail</a>
   </div>
   </div>
-
+  <div id="parcours">
+    <h2>Mon Parcours</h2>
+    <div class="timeline">
+      <div class="container right">
+        <h3>2010-2010</h3>
+        <p>Informatique</p>
+        <p>blablablabla</p>
+      </div>
+      <div class="container left">
+        <h3>2010-2010</h3>
+        <p>Informatique</p>
+        <p>blablablabla</p>
+      </div>
+    </div>
+  </div>
+  <div id="skills">
+    <h2>Mes compétences</h2>
+    <div class="container">
+      <div class="language">
+        <div class="python">
+          <p>Python</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="css">
+          <p>css</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="php">
+          <p>PHP</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="java">
+          <p>Java</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+      </div>
+      <div class="database">
+        <div class="mysql">
+          <p>MySQL</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="mariadb">
+          <p>MariaDB</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+      </div>
+      <div class="framework">
+        <div class="javascript">
+          <p>JavaScript</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="typescript">
+          <p>TypeScript</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="django">
+          <p>Django</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+        <div class="vue">
+          <p>Vue.JS</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+      </div>
+      <div class="others">
+        <div class="git">
+          <p>Git</p>
+          <progress value="70" max="100">70 %</progress>
+        </div>
+      </div>
+    </div>
+  </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
