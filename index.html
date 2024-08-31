@@ -7,104 +7,112 @@
     <title>Léo Merkel</title>
   </head>
   <body>
-  <div class="menu"> <!-- le menu suivra partout -->
-    <ul>
-      <li><a href="#intro">Accueil</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="#">Projects</a></li>
-    </ul>
+  <div class="welcome" id="welcome">
+    <h1>Bienvenue</h1>
   </div>
-  <div id=intro>
-    <div class="fadeOut"><h1>Welcome to my Page</h1></div> <!-- va rester qqseconde en page d'accueil pour partir -->
-    <div class="names">
-      <h2>MERKEL Léo</h2>
-      <p>Développeur Back-End / Front-End</p> <!-- a animer -->
+  <div id="contents" class="contents">
+    <div class="menu">
+      <ul>
+        <li><a href="#intro">Accueil</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
     </div>
-    <img src="/chad.png" width="250" height="250" alt="">
-    <p>étudiant en developpement web âge de 20 ans, ma passion pour l'infomatique se manifeste a travers mon engouement pour le developpement web</p>
-  <div class="social-links">
-    <a href="https://x.com/Orabisss"><img src="/X_logo_2023.svg" width="50" height="50" alt="X"></a>
-    <a href="https://github.com/Orabis"><img src="/Octicons-mark-github.svg" width="50" height="50" alt="GitHub"></a>
-    <a href="mailto:cdf.leo.merkel@gmail.com"><img src="/gmail-svgrepo-com.svg" width="50" height="50" alt="Mail"></a>
-  </div>
-  </div>
-  <div id="parcours">
-    <h2>Mon Parcours</h2>
-    <div class="timeline">
-      <div class="container right">
-        <h3>2010-2010</h3>
-        <p>Informatique</p>
-        <p>blablablabla</p>
-      </div>
-      <div class="container left">
-        <h3>2010-2010</h3>
-        <p>Informatique</p>
-        <p>blablablabla</p>
-      </div>
-    </div>
-  </div>
-  <div id="skills">
-    <h2>Mes compétences</h2>
-    <div class="container">
-      <div class="language">
-        <div class="python">
-          <p>Python</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="css">
-          <p>css</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="php">
-          <p>PHP</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="java">
-          <p>Java</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-      </div>
-      <div class="database">
-        <div class="mysql">
-          <p>MySQL</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="mariadb">
-          <p>MariaDB</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-      </div>
-      <div class="framework">
-        <div class="javascript">
-          <p>JavaScript</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="typescript">
-          <p>TypeScript</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="django">
-          <p>Django</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-        <div class="vue">
-          <p>Vue.JS</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-      </div>
-      <div class="others">
-        <div class="git">
-          <p>Git</p>
-          <progress value="70" max="100">70 %</progress>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="projects">
-    <h2>Mes Projets</h2>
-  </div>
 
+    <div class="intro" id=intro>
+      <div class="names">
+        <h1>MERKEL Léo</h1>
+        <h2>Développeur Back-End / Front-End</h2> <!-- a animer -->
+      </div>
+      <div class="face-img">
+        <img src="/chad.png" width="250" height="250" alt="">
+      </div>
+      <p>Étudiant en developpement web, âgé de 20 ans. <br> Ma passion pour l'infomatique se manifeste a travers mon engouement pour le developpement web</p>
+    <div class="social-links">
+      <a href="https://x.com/Orabisss"><img src="/X_logo_2023.svg" width="50" height="50" alt="X"></a>
+      <a href="https://github.com/Orabis"><img src="/Octicons-mark-github.svg" width="50" height="50" alt="GitHub"></a>
+      <a href="mailto:cdf.leo.merkel@gmail.com"><img src="/gmail-svgrepo-com.svg" width="50" height="50" alt="Mail"></a>
+    </div>
+
+    </div>
+    <div class="spacing" id="parcours">
+      <h2 class="center">Mon Parcours</h2>
+      <div class="timeline">
+        <div class="container right">
+          <h3>2010-2010</h3>
+          <p>Informatique</p>
+          <p>blablablabla</p>
+        </div>
+        <div class="container left">
+          <h3>2010-2010</h3>
+          <p>Informatique</p>
+          <p>blablablabla</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="spacing" id="skills">
+      <h2 class="center">Mes compétences</h2>
+      <div class="container">
+        <div class="language">
+          <div class="python">
+            <p>Python</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="css">
+            <p>css</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="php">
+            <p>PHP</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="java">
+            <p>Java</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+        </div>
+        <div class="database">
+          <div class="mysql">
+            <p>MySQL</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="mariadb">
+            <p>MariaDB</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+        </div>
+        <div class="framework">
+          <div class="javascript">
+            <p>JavaScript</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="typescript">
+            <p>TypeScript</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="django">
+            <p>Django</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          <div class="vue">
+            <p>Vue.JS</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+        </div>
+        <div class="others">
+          <div class="git">
+            <p>Git</p>
+            <progress value="70" max="100">70 %</progress>
+          </div>
+          </div>
+        </div>
+      </div>
+    <div class ="spacing" id="projects">
+      <h2 class="center">Mes Projets</h2>
+    </div>
+  </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
