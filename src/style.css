@@ -12,6 +12,36 @@
 
 }
 
+.menu{
+  padding:10px 0 ;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left : 0;
+}
+.menu ul{
+  text-align: center;
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+.menu ul li{
+  display: inline-block;
+  margin: 0 15px;
+}
+.menu ul li a{
+  font-weight: bold;
+  color:white;
+  text-decoration: none;
+  padding:10px 15px;
+  transition: background-color 0.3s;
+}
+.menu ul li a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: white;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -27,6 +57,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding-top: 50px;
 }
 
 h1 {
@@ -86,4 +117,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.fadeOut{ animation: fadeOut 3s;}
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0; :disabled}
 
+}
