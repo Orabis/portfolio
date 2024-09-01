@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,6 +21,9 @@ p {
 }
 .intro{
   padding-bottom: 15%;
+  display:flex;
+  justify-content: space-evenly;
+  align-items:center;
 }
 
 .names h1 {
@@ -65,11 +71,8 @@ p {
 
 
 .face-img img {
-  position: absolute;
   border: solid;
   border-radius: 50%;
-  left: 70%;
-  top:25%;
 }
 
 @media only screen and (max-width: 1630px) {
@@ -85,23 +88,36 @@ p {
 }
 
 .welcome{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  min-height: 100vh;
-  font-size:52px;
+  font-size: 52px;
 
 }
 .fadeOut{
   opacity:0;
   transition: opacity 2s ease-out;
 }
-.show{
-  display:block;
-}
 .contents{
+  opacity:100%;
+  transition: opacity 2s ease-in-out;
+  padding-top:15%;
+  font-size:24px;
+}
+#introduction{
+  display:block;
+  height: 1px;
+  margin-top: -60px;
+  visibility: hidden;
+}
+.fadeIn{
   margin-top:15%;
   font-size:24px;
-  display:none;
+  opacity: 20%;
+}
+
+.blockInteract{
+  overflow: hidden;
 }
