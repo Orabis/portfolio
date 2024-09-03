@@ -61,12 +61,13 @@ p {
   text-decoration-color: white;
 }
 .center{
-  text-align : center
+  text-align : center;
+  margin-bottom: 5%;
 }
 .spacing{
   display:flex;
   flex-direction: column;
-  gap:2em;
+  gap:3em;
 }
 
 
@@ -120,4 +121,28 @@ p {
 
 .blockInteract{
   overflow: hidden;
+}
+.parcours{
+
+}
+
+.timeline-container {
+  position: relative;
+  padding-bottom: 25%;
+  width: 100px; /* Ajuste la largeur du conteneur */
+}
+
+.timeline {
+  position: relative;
+  width: 0;
+  height: 4px;
+  background-color: white;
+  transition: width 2s ease-out;
+}
+
+.event {
+  position: absolute;
+  left: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
