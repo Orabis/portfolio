@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onload = () => {
     const timeline = document.getElementById('timeline') as HTMLElement;
     const events = document.querySelectorAll('.event') as NodeListOf<HTMLElement>;
-
-    // Fonction pour vérifier si l'élément est visible
     const isInViewport = (elem: HTMLElement) => {
         const rect = elem.getBoundingClientRect();
         return (
@@ -33,18 +31,14 @@ window.onload = () => {
     };
     const handleScroll = () => {
         if (isInViewport(timeline)) {
-            // Déclenche l'animation si l'élément est visible
-            timeline.style.width = '1000px';
+            timeline.style.width = '80%';
+            timeline.classList.add('expanded');
 
             setTimeout(() => {
                 events.forEach(event => event.style.opacity = '1');
             }, 900);
-
-            // Une fois l'animation déclenchée, on retire l'écouteur pour ne pas la relancer
             window.removeEventListener('scroll', handleScroll);
         }
     };
-
-    // Ajoute l'écouteur d'événement au défilement
     window.addEventListener('scroll', handleScroll);
 };
