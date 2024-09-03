@@ -27,10 +27,11 @@ p {
   margin: auto;
 }
 .intro{
-  padding-top: 20%;
   display:flex;
-  justify-content: space-evenly;
-  align-items:center;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height:100vh;
 }
 
 .names h1 {
@@ -125,10 +126,9 @@ p {
 .fullpage {
   scroll-snap-align: start;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display:flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
 
 .timeline-container {
