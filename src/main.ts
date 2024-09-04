@@ -18,27 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 window.onload = () => {
-    const timeline = document.getElementById('timeline') as HTMLElement;
-    const events = document.querySelectorAll('.event') as NodeListOf<HTMLElement>;
-    const isInViewport = (elem: HTMLElement) => {
-        const rect = elem.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    };
-    const handleScroll = () => {
-        if (isInViewport(timeline)) {
-            timeline.style.width = '100%';
-            timeline.classList.add('expanded');
-
-            setTimeout(() => {
-                events.forEach(event => event.style.opacity = '1');
-            }, 900);
-            window.removeEventListener('scroll', handleScroll);
-        }
-    };
-    window.addEventListener('scroll', handleScroll);
+    window.scroll(0, 0);
+    setTimeout(() => {
+        const timeline = document.getElementById('timeline') as HTMLElement;
+        const events = document.querySelectorAll('.event') as NodeListOf<HTMLElement>;
+        const isInViewport = (elem: HTMLElement) => {
+            const rect = elem.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+        const handleScroll = () => {
+            if (isInViewport(timeline)) {
+                timeline.style.width = '100%';
+                timeline.classList.add('expanded');
+                setTimeout(() => {
+                    events.forEach(event => event.style.opacity = '1');
+                }, 900);
+                window.removeEventListener('scroll', handleScroll);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+    }, 3000);
 };

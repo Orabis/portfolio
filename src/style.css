@@ -17,6 +17,11 @@ html{
   background: linear-gradient(0deg, #000000 0%, #020024 10%, #060a58 30%, #1a73b9 50%, #22b6ed 70%, #00d4ff 80%) top no-repeat, #000000; background-size: 100% 47%;
 
 }
+@media(max-width: 625px){
+  :root{
+    padding-left:0;
+  }
+}
 
 body{
   margin-left: 5em;
@@ -33,8 +38,12 @@ p {
   align-content: center;
   height:100vh;
 }
-.names h1 {
-  margin:auto;}
+@media(max-width: 625px){
+  .intro {
+    flex-direction: column;
+  }
+}
+
 .names h2 {
   margin:auto;}
 
@@ -54,7 +63,8 @@ p {
 }
 @media(max-width: 625px){
   .intro{
-    padding-top: 60%;
+    padding-top: 75%;
+    padding-bottom: 75%;
   }
 }
 .menu ul{
@@ -101,7 +111,11 @@ p {
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: 52px;
-
+}
+@media(max-width:929px){
+  .welcome{
+    font-size: 24px;
+  }
 }
 .fadeOut{
   opacity:0;
@@ -158,11 +172,11 @@ p {
 .timeline::after {
   content: '>';
   position: absolute;
-  right: -2%;
+  right: -1%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-58%);
   font-size: 5vw;
-  transition: opacity 2s ease-out;
+  transition: opacity 1s ease-out;
   opacity: 0;
 }
 
