@@ -33,7 +33,6 @@ p {
   align-content: center;
   height:100vh;
 }
-
 .names h1 {
   margin:auto;}
 .names h2 {
@@ -45,6 +44,18 @@ p {
   position: fixed;
   top: 0;
   left : 0;
+}
+@media (max-width: 929px) {
+  .menu ul{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media(max-width: 625px){
+  .intro{
+    padding-top: 60%;
+  }
 }
 .menu ul{
   text-align: center;
@@ -108,7 +119,6 @@ p {
   visibility: hidden;
 }
 .fadeIn{
-  margin-top:15%;
   font-size:24px;
   opacity: 20%;
 }
@@ -133,7 +143,8 @@ p {
 
 .timeline-container {
   padding-bottom: 25%;
-  width: 100px;
+  width: 100%;
+  position:relative;
 }
 
 .timeline {
@@ -147,10 +158,10 @@ p {
 .timeline::after {
   content: '>';
   position: absolute;
-  right: -29px;
+  right: -2%;
   top: 50%;
-  transform: translateY(-58%);
-  font-size: 72px;
+  transform: translateY(-50%);
+  font-size: 5vw;
   transition: opacity 2s ease-out;
   opacity: 0;
 }
@@ -158,9 +169,33 @@ p {
 .timeline.expanded::after {
   opacity: 1;
 }
-
+.event-container{
+  display:flex;
+  gap:2vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: row;
+}
+.event h3{
+  font-size:24px;
+}
 .event {
-  left: 20px;
+  font-size:17px;
+  text-align:justify-all;
+  line-height: 1.5;
+  position:relative;
+  left: 1%;
   opacity: 0;
   transition: opacity 0.5s ease-out;
+}
+@media (max-width: 768px) {
+  .event-container {
+    flex-direction: column;
+  }
+
+  .event {
+    max-width: 100%;
+    margin-bottom: 2vh;
+  }
 }

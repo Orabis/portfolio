@@ -31,7 +31,7 @@ window.onload = () => {
     };
     const handleScroll = () => {
         if (isInViewport(timeline)) {
-            timeline.style.width = '80%';
+            timeline.style.width = '100%';
             timeline.classList.add('expanded');
 
             setTimeout(() => {
