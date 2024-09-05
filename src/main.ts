@@ -43,4 +43,28 @@ window.onload = () => {
         };
         window.addEventListener('scroll', handleScroll);
     }, 3000);
+
+    const detailsElements = document.querySelectorAll('details');
+
+    detailsElements.forEach(details => {
+        details.addEventListener('mouseover', () => {
+            if (!details.hasAttribute('open')) {
+                details.setAttribute('open', 'true');
+                const content = details.querySelector('summary ~ *') as HTMLElement;
+                if (content) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            }
+        });
+
+        details.addEventListener('mouseout', () => {
+            if (details.hasAttribute('open')) {
+                const content = details.querySelector('summary ~ *') as HTMLElement;
+                if (content) {
+                    content.style.maxHeight = '0';
+                    setTimeout(() => details.removeAttribute('open'), 500);
+                }
+            }
+        });
+    });
 };
