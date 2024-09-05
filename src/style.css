@@ -213,3 +213,11 @@ p {
     margin-bottom: 2vh;
   }
 }
+.skills-list{
+  display:grid;
+  justify-content: start;
+}
+
+details > summary{
+  list-style:none;
+}
