@@ -47,24 +47,33 @@ window.onload = () => {
     const detailsElements = document.querySelectorAll('details');
 
     detailsElements.forEach(details => {
-        details.addEventListener('mouseover', () => {
-            if (!details.hasAttribute('open')) {
+        let preentered = 0;
+        let entered = 0;
+
+        details.addEventListener('mouseenter', () => {
+            if (!details.hasAttribute('open') && entered === 0) {
                 details.setAttribute('open', 'true');
+                preentered = 1;
                 const content = details.querySelector('summary ~ *') as HTMLElement;
                 if (content) {
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
             }
-        });
-
-        details.addEventListener('mouseout', () => {
-            if (details.hasAttribute('open')) {
+            if (details.hasAttribute("open") && entered === 1) {
                 const content = details.querySelector('summary ~ *') as HTMLElement;
+                entered = 0;
                 if (content) {
                     content.style.maxHeight = '0';
                     setTimeout(() => details.removeAttribute('open'), 500);
                 }
             }
         });
-    });
-};
+
+        details.addEventListener('mouseleave', () => {
+            if (details.hasAttribute('open') && preentered === 1) {
+                entered = 1;
+                preentered = 0;
+            }
+        });
+    })
+}
