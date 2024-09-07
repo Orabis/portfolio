@@ -233,6 +233,11 @@ p {
   display:flex;
   justify-content: space-evenly;
 }
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+  }
+}
 details > summary{
   list-style:none;
   cursor:pointer;
