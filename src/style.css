@@ -31,6 +31,10 @@ body{
 p {
   margin: auto;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
 .intro{
   display:flex;
   flex-direction: row;
@@ -46,6 +50,10 @@ p {
 
 .names h2 {
   margin:auto;}
+.names img{
+    width: 50px;
+    height: 50px;
+}
 
 .menu{
   padding:10px;
@@ -97,6 +105,8 @@ p {
 .face-img img {
   border: solid;
   border-radius: 50%;
+  width:250px;
+  height:250px;
 }
 .social-links{
   padding-top:25px;
@@ -198,9 +208,7 @@ p {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
-.skills-container{
 
-}
 
 @media (max-width: 768px) {
   .event-container {
@@ -212,32 +220,34 @@ p {
     margin-bottom: 2vh;
   }
 }
-.skills-list{
-  position: relative;
-  display:grid;
-  gap:1em;
-  grid-template-columns: 1fr 1fr;
-  justify-content: start;
-}
-.skills-list div {
-  overflow:hidden;
-  width:100%;
-}
-.skills-list p{
-  margin-bottom:5px;
-}
-.skills-list progress{
-  width: 100%;
-  max-width: 100%;
-  height:15px;
-  box-sizing: border-box;
+.skills-container{
+    padding-bottom: 25%;
+    width: 100%;
 }
 
-.container {
-  scroll-snap-type: y mandatory;
-  display:flex;
-  justify-content: space-evenly;
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2em;
 }
+
+.progress-container {
+  width: 100%;
+  background-color: black;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 12px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+}
+
+.progressbar {
+  height: 100%;
+  width: 0;
+  background-color: white;
+  transition: width 2.5s ease;
+}
+
 @media (max-width: 768px) {
   .container{
     flex-direction: column;
@@ -274,5 +284,24 @@ details:hover p{
 .projectgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1em;
+  gap: 2em;
+}
+.project{
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 0.4em;
+  transition: background-color 0.5s;
+}
+.project span{
+  display:block;
+  font-weight: bold;
+  text-align: center;
+}
+.project p{
+    text-align: center;
+    font-size: 14px;
+}
+.project img{
+    width: 100%;
+    border-radius: 12px;
 }
