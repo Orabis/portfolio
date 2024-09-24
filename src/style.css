@@ -281,6 +281,92 @@ details:hover p{
   opacity: 1;
 }
 
+.comp-main-container {
+  border: 1px solid white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2em 2em 2em 1em;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.category-skills {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.category-skills button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.category-skills button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-skills button:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.category-skills button.active {
+  background-color: white;
+  color: black;
+}
+
+.skills-lists {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  margin-left: 2em;
+  flex-grow: 1;
+}
+
+.skills-lists p {
+  text-align: center;
+  color: white;
+  padding: 0.6em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.skills-lists p:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .skills-lists {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    margin-left: 0;
+  }
+
+  .comp-main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-skills {
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: center;
+  }
+
+  .skills-lists p {
+    font-size: 1rem;
+  }
+}
 .projectgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
