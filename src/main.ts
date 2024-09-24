@@ -21,20 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainButton = document.getElementById("main-button") as HTMLButtonElement | null;
         const secondButton = document.getElementById("second-button") as HTMLButtonElement | null;
         const thirdButton = document.getElementById("third-button") as HTMLButtonElement | null;
+        const fourButton = document.getElementById("four-button") as HTMLButtonElement | null;
 
         const mainSkills = document.getElementById("main-skills-list") as HTMLDivElement | null;
         const secondSkills = document.getElementById("second-skills-list") as HTMLDivElement | null;
         const thirdSkills = document.getElementById("third-skills-list") as HTMLDivElement | null;
+        const fourSkills = document.getElementById("four-skills-list") as HTMLDivElement | null;
 
-        if (mainButton && secondButton && thirdButton && mainSkills && secondSkills && thirdSkills) {
-            function showSkills(selected: HTMLElement, toHide1: HTMLElement, toHide2: HTMLElement) {
+        if (mainButton && secondButton && thirdButton && fourButton && mainSkills && secondSkills && thirdSkills && fourSkills) {
+            function showSkills(selected: HTMLElement, toHide1: HTMLElement, toHide2: HTMLElement, toHide3: HTMLElement) {
                 selected.style.display = 'grid';
                 toHide1.style.display = 'none';
                 toHide2.style.display = 'none';
+                toHide3.style.display = 'none';
+
             }
-            mainButton.addEventListener('click', () => showSkills(mainSkills, secondSkills, thirdSkills));
-            secondButton.addEventListener('click', () => showSkills(secondSkills, mainSkills, thirdSkills));
-            thirdButton.addEventListener('click', () => showSkills(thirdSkills, mainSkills, secondSkills));
+            mainButton.addEventListener('click', () => showSkills(mainSkills, secondSkills, thirdSkills, fourSkills));
+            secondButton.addEventListener('click', () => showSkills(secondSkills, mainSkills, thirdSkills, fourSkills));
+            thirdButton.addEventListener('click', () => showSkills(thirdSkills, mainSkills, secondSkills, fourSkills));
+            fourButton.addEventListener('click', () => showSkills(fourSkills,thirdSkills, mainSkills, secondSkills));
+
         } else {
             console.error("Un ou plusieurs éléments du DOM ne sont pas chargés correctement.");
         }
