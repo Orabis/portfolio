@@ -312,7 +312,6 @@ details:hover p {
 }
 
 .comp-main-container {
-    border: 1px solid white;
     border-radius: 12px;
     display: flex;
     flex-direction: row;
@@ -327,32 +326,42 @@ details:hover p {
 .category-skills {
     display: flex;
     gap: 3em;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 2em;
+
 }
 
 .category-skills button {
-    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 24px;
     color: white;
-    border: 2px solid white;
-    border-radius: 12px;
-    padding: 0.6em 1em;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    padding: 10px 20px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
 }
 
-.category-skills button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.category-skills button:focus {
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.category-skills button.active {
+.category-skills button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
     background-color: white;
-    color: black;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.category-skills button:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.category-skills button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes skill-fadeIn {
@@ -376,7 +385,7 @@ details:hover p {
     opacity: 1;
     display: grid;
     gap: 1.5em;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     margin-left: 2em;
     flex-grow: 1;
 }

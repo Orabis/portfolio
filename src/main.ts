@@ -34,16 +34,36 @@ document.addEventListener('DOMContentLoaded', () => {
             toHide1.classList.remove("show");
             toHide2.classList.remove("show");
             toHide3.classList.remove("show");
-
         }
 
-        mainButton.addEventListener('click', () => showSkills(mainSkills, secondSkills, thirdSkills, fourSkills));
-        secondButton.addEventListener('click', () => showSkills(secondSkills, mainSkills, thirdSkills, fourSkills));
-        thirdButton.addEventListener('click', () => showSkills(thirdSkills, mainSkills, secondSkills, fourSkills));
-        fourButton.addEventListener('click', () => showSkills(fourSkills, thirdSkills, mainSkills, secondSkills));
+        const buttons = [mainButton, secondButton, thirdButton, fourButton];
 
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                button.classList.add('active');
+
+                setTimeout(() => {
+                    button.classList.remove('active');
+                }, 100);
+
+                switch (button) {
+                    case mainButton:
+                        showSkills(mainSkills, secondSkills, thirdSkills, fourSkills);
+                        break;
+                    case secondButton:
+                        showSkills(secondSkills, mainSkills, thirdSkills, fourSkills);
+                        break;
+                    case thirdButton:
+                        showSkills(thirdSkills, mainSkills, secondSkills, fourSkills);
+                        break;
+                    case fourButton:
+                        showSkills(fourSkills, thirdSkills, mainSkills, secondSkills);
+                        break;
+                }
+            });
+        });
     } else {
-        console.error("Un ou plusieurs éléments du DOM ne sont pas chargés correctement.");
+        console.error('One of the buttons or skills is missing');
     }
 });
 
