@@ -115,7 +115,7 @@ a {
 
 .center {
     text-align: center;
-    padding-bottom: 5%;
+    padding-bottom: 4em;
 }
 
 .face-img img {
@@ -312,15 +312,16 @@ details:hover p {
 }
 
 .comp-main-container {
-    border-radius: 12px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 2em 2em 2em 1em;
+    padding: 2em;
     margin: auto;
     max-width: 1200px;
-    min-height: 35vh;
+    min-height: 40vh;
 }
 
 .category-skills {
@@ -334,13 +335,14 @@ details:hover p {
 
 .category-skills button {
     font-size: 24px;
+    font-family: Consolas, Courier New, monospace;
     color: white;
     background-color: transparent;
     border: none;
     position: relative;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
+
 }
 
 .category-skills button::after {
@@ -352,11 +354,13 @@ details:hover p {
     height: 2px;
     background-color: white;
     transition: width 0.3s ease, left 0.3s ease;
+
 }
 
 .category-skills button:hover::after {
     width: 100%;
     left: 0;
+
 }
 
 .category-skills button:active {
@@ -385,18 +389,18 @@ details:hover p {
     opacity: 1;
     display: grid;
     gap: 1.5em;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    margin-left: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     flex-grow: 1;
 }
 
 .skills-lists p {
+
     text-align: center;
     color: white;
     padding: 0.6em;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -440,8 +444,12 @@ details:hover p {
 }
 
 .skill span {
-    display: block;
+    font-weight: lighter;
+    font-family: Courier New, monospace;
+    white-space: nowrap;
+    font-size: 16px;
     text-align: center;
+
 }
 
 .projectgrid {
