@@ -511,7 +511,6 @@ details:hover p {
 }
 
 .unusable {
-    click-events: none;
     cursor: default;
 }
 
