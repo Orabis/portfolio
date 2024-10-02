@@ -69,6 +69,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = () => {
     window.scroll(0, 0);
+    const span = document.querySelector('.main-text');
+    const texts = ["Back-End", "Front-End"];
+    let currentText = 0;
+    let i = 0;
+    let isDeleting = false;
+
+    if (span) {
+        const typeWriterEffect = () => {
+            const text = texts[currentText];
+
+            if (!isDeleting) {
+                span.innerHTML = text.slice(0, i);
+                i++;
+                if (i > text.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriterEffect, 2000);
+                    return;
+                }
+            } else {
+                span.innerHTML = text.slice(0, i);
+                i--;
+                if (i < 0) {
+                    setTimeout(() => {
+                        currentText = (currentText + 1) % texts.length;
+                        isDeleting = false;
+                        i = 0;
+                        typeWriterEffect();
+                    }, 1000);
+                    return;
+                }
+            }
+
+            setTimeout(typeWriterEffect, isDeleting ? 250 : 150);
+        };
+
+        typeWriterEffect();
+    }
+
+    let lastScrollTop = 0;
+    const menu = document.querySelector('.menu') as HTMLElement | null;
+
+    if (menu) {
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                menu.classList.add('hidden');
+            } else {
+                menu.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    }
+
     setTimeout(() => {
         const timeline = document.getElementById('timeline') as HTMLElement | null;
         const events = document.querySelectorAll('.event') as NodeListOf<HTMLElement>;
