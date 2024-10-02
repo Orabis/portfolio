@@ -29,41 +29,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const fourSkills = document.getElementById("four-skills-list") as HTMLDivElement | null;
 
     if (mainButton && secondButton && thirdButton && fourButton && mainSkills && secondSkills && thirdSkills && fourSkills) {
-        function showSkills(selected: HTMLElement, toHide1: HTMLElement, toHide2: HTMLElement, toHide3: HTMLElement) {
+        function showSkills(selected: HTMLElement, ...toHide: HTMLElement[]) {
             selected.classList.add("show");
-            toHide1.classList.remove("show");
-            toHide2.classList.remove("show");
-            toHide3.classList.remove("show");
+            toHide.forEach(hide => hide.classList.remove("show"));
         }
 
         const buttons = [mainButton, secondButton, thirdButton, fourButton];
 
-        buttons.forEach(button => {
-            button.addEventListener('click', function () {
+        buttons.forEach((button, index) => {
+            button!.addEventListener('click', function () {
                 button.classList.add('active');
 
                 setTimeout(() => {
                     button.classList.remove('active');
                 }, 100);
 
-                switch (button) {
-                    case mainButton:
-                        showSkills(mainSkills, secondSkills, thirdSkills, fourSkills);
-                        break;
-                    case secondButton:
-                        showSkills(secondSkills, mainSkills, thirdSkills, fourSkills);
-                        break;
-                    case thirdButton:
-                        showSkills(thirdSkills, mainSkills, secondSkills, fourSkills);
-                        break;
-                    case fourButton:
-                        showSkills(fourSkills, thirdSkills, mainSkills, secondSkills);
-                        break;
-                }
+                showSkills(
+                    [mainSkills, secondSkills, thirdSkills, fourSkills][index]!,
+                    ...[mainSkills, secondSkills, thirdSkills, fourSkills].filter((_, i) => i !== index)
+                );
             });
         });
     } else {
-        console.error('One of the buttons or skills is missing');
+        console.error('Un des boutons ou des listes de compétences est manquant');
     }
 });
 

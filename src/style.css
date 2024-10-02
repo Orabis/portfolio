@@ -12,8 +12,8 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
     font-synthesis: none;
     background: linear-gradient(0deg, #000000 0%, #020024 10%, #060a58 30%, #1a73b9 50%, #22b6ed 70%, #00d4ff 80%) top no-repeat, #000000;
     background-size: 100% 47%;
@@ -22,14 +22,22 @@ html {
 
 @media (max-width: 625px) {
     :root {
-        padding-left: 0;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
 
 body {
-    margin-left: 5em;
-    margin-right: 5em;
+    margin-left: 2em;
+    margin-right: 2em;
 
+}
+
+@media (max-width: 625px) {
+    body {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 p {
@@ -70,6 +78,12 @@ a {
     position: relative;
 }
 
+@media (max-width: 625px) {
+    .main-text {
+        display: block;
+    }
+}
+
 .main-text::after {
     content: '|';
     font-weight: bold;
@@ -94,28 +108,26 @@ a {
     left: 0;
     transition: transform 0.3s ease;
     z-index: 100;
+    margin: 0 auto;
+    max-width: 100%;
+
 }
 
 .menu.hidden {
     transform: translateY(-100%);
 }
 
-@media (max-width: 929px) {
-    .menu ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-}
 
 @media (max-width: 625px) {
-    .intro {
-        padding-top: 75%;
-        padding-bottom: 75%;
+    .menu ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
 .menu ul {
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -222,7 +234,6 @@ a {
 .timeline {
     position: absolute;
     width: 0;
-    margin: auto;
     height: 4px;
     background-color: white;
     transition: width 2s ease-out;
@@ -232,7 +243,8 @@ a {
 .timeline::after {
     content: '>';
     position: absolute;
-    right: -1.5rem;
+    left: 100%;
+    transform: translateX(-50%);
     top: -2.5rem;
     font-size: 3rem;
     transition: opacity 1s ease-out;
@@ -361,6 +373,14 @@ details:hover p {
     flex-direction: row;
     justify-content: center;
     padding-bottom: 2em;
+
+}
+
+@media (max-width: 768px) {
+    .category-skills {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 
 }
 
