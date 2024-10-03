@@ -15,9 +15,22 @@ html {
     padding-left: 2em;
     padding-right: 2em;
     font-synthesis: none;
-    background: linear-gradient(0deg, #000000 0%, #020024 10%, #060a58 30%, #1a73b9 50%, #22b6ed 70%, #00d4ff 80%) top no-repeat, #000000;
-    background-size: 100% 47%;
+    background: linear-gradient(90deg, #2a2a2a, #101e62, #0334ff);
+    background-size: 300% 300%;
+    animation: gradientBackground 16s ease infinite;
+    -webkit-background-clip: text;
+}
 
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @media (max-width: 625px) {
@@ -197,6 +210,11 @@ a {
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 52px;
+    background: linear-gradient(90deg, #ff6b6b, #2d46a9, #1dd1a1);
+    background-size: 300% 300%;
+    animation: gradientBackground 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 929px) {
