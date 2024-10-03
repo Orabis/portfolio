@@ -60,6 +60,11 @@ a {
 @media (max-width: 625px) {
     .intro {
         flex-direction: column;
+        gap: 1em;
+    }
+
+    .names {
+        text-align: center;
     }
 }
 
@@ -120,8 +125,14 @@ a {
 
 @media (max-width: 625px) {
     .menu ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .menu li {
+        flex: 1;
+        text-align: center;
     }
 }
 
@@ -156,6 +167,12 @@ a {
 .center {
     text-align: center;
     padding-bottom: 4em;
+}
+
+@media (max-width: 625px) {
+    .center {
+        padding-bottom: 2em;
+    }
 }
 
 .face-img img {
