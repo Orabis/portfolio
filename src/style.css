@@ -421,22 +421,30 @@ details:hover p {
     cursor: pointer;
 }
 
-.slide span {
+.slide a {
     font-family: Consolas, Courier New, monospace;
-    display: block;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     position: absolute;
     transform-origin: center;
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.slide:hover span {
+.slide a img {
+    margin-left: 5px;
+    width: 25px;
+    height: auto;
+}
+
+.slide:hover a {
     transform: scale(1);
     opacity: 1;
     transition-delay: 100ms;
 }
 
-.slide:nth-child(1):not(:has(~.slide:hover, ~.slide:focus-within)) span {
+.slide:nth-child(1):not(:has(~.slide:hover, ~.slide:focus-within)) a {
     transform: scale(1);
     opacity: 1;
 }
