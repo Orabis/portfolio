@@ -119,20 +119,21 @@ a {
 }
 
 .menu {
-    padding-top: 1%;
-    width: 100%;
+    max-width: 550px;
     position: fixed;
-    top: 0;
     left: 0;
+    right: 0;
     transition: transform 0.3s ease;
     z-index: 100;
     margin: 0 auto;
-    max-width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
 
 }
 
 .menu.hidden {
-    transform: translateY(-100%);
+    transform: translateY(-150%);
 }
 
 
@@ -153,28 +154,39 @@ a {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 0;
     padding: 0;
+    margin-top: 12px;
+    margin-bottom: 12px;
     list-style-type: none;
+
 }
 
 .menu ul li {
-    display: inline-block;
     margin: 0 15px;
+    position: relative;
 }
 
-.menu ul li a {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease, left 0.3s ease;
+
 }
 
-.menu ul li a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: white;
+.menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+
+}
+
+.menu ul li a:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .center {
