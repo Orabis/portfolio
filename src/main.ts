@@ -1,6 +1,15 @@
 import './style.css';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const bienvenueSection = document.querySelector('.welcome') as HTMLElement | null;
+    if (bienvenueSection) {
+        requestAnimationFrame(function () {
+            bienvenueSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+    }
     setTimeout(() => {
         const welcome = document.querySelector('.welcome') as HTMLElement | null;
         const mainContent = document.getElementById('contents') as HTMLElement | null;
@@ -56,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.onload = () => {
-    window.scroll(0, 0);
     const span = document.querySelector('.main-text');
     const texts = ["Back-End", "Front-End"];
     let currentText = 0;
