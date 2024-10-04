@@ -6,7 +6,6 @@ html {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
     text-rendering: optimizeLegibility;
@@ -21,36 +20,9 @@ html {
     -webkit-background-clip: text;
 }
 
-@keyframes gradientBackground {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
-}
-
-@media (max-width: 625px) {
-    :root {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-}
-
 body {
     margin-left: 2em;
     margin-right: 2em;
-
-}
-
-@media (max-width: 625px) {
-    body {
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 p {
@@ -70,17 +42,6 @@ a {
     height: 100vh;
 }
 
-@media (max-width: 625px) {
-    .intro {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .names {
-        text-align: center;
-    }
-}
-
 .names h2 {
     margin: auto;
 }
@@ -96,12 +57,6 @@ a {
     position: relative;
 }
 
-@media (max-width: 625px) {
-    .main-text {
-        display: block;
-    }
-}
-
 .main-text::after {
     content: '|';
     font-weight: bold;
@@ -109,13 +64,8 @@ a {
     animation: blink 1s step-end infinite;
 }
 
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+.menu.hidden {
+    transform: translateY(-150%);
 }
 
 .menu {
@@ -129,25 +79,6 @@ a {
     background-color: rgba(0, 0, 0, .4);
     border-radius: 100px;
     backdrop-filter: blur(10px);
-
-}
-
-.menu.hidden {
-    transform: translateY(-150%);
-}
-
-
-@media (max-width: 625px) {
-    .menu ul {
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .menu li {
-        flex: 1;
-        text-align: center;
-    }
 }
 
 .menu ul {
@@ -158,7 +89,6 @@ a {
     margin-top: 12px;
     margin-bottom: 12px;
     list-style-type: none;
-
 }
 
 .menu ul li {
@@ -175,13 +105,11 @@ a {
     height: 2px;
     background-color: white;
     transition: width 0.3s ease, left 0.3s ease;
-
 }
 
 .menu ul li a:hover::after {
     width: 100%;
     left: 0;
-
 }
 
 .menu ul li a:active {
@@ -192,12 +120,6 @@ a {
 .center {
     text-align: center;
     padding-bottom: 4em;
-}
-
-@media (max-width: 625px) {
-    .center {
-        padding-bottom: 2em;
-    }
 }
 
 .face-img img {
@@ -227,12 +149,6 @@ a {
     animation: gradientBackground 8s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-@media (max-width: 929px) {
-    .welcome {
-        font-size: 24px;
-    }
 }
 
 .fadeOut {
@@ -284,7 +200,6 @@ a {
     height: 4px;
     background-color: white;
     transition: width 2s ease-out;
-
 }
 
 .timeline::after {
@@ -325,17 +240,6 @@ a {
     transition: opacity 0.5s ease-out;
 }
 
-@media (max-width: 768px) {
-    .event-container {
-        flex-direction: column;
-    }
-
-    .event {
-        max-width: 100%;
-        margin-bottom: 2vh;
-    }
-}
-
 .skills-container {
     padding-bottom: 10%;
     width: 100%;
@@ -364,12 +268,6 @@ a {
     transition: width 2.5s ease;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
 details > summary {
     list-style: none;
     cursor: pointer;
@@ -385,15 +283,6 @@ details[open] summary ~ * {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
-}
-
-@keyframes detailsFading {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 details:hover p {
@@ -420,15 +309,6 @@ details:hover p {
     flex-direction: row;
     justify-content: center;
     padding-bottom: 2em;
-
-}
-
-@media (max-width: 768px) {
-    .category-skills {
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
 }
 
 .category-skills button {
@@ -440,7 +320,6 @@ details:hover p {
     position: relative;
     padding: 10px 20px;
     cursor: pointer;
-
 }
 
 .category-skills button::after {
@@ -452,29 +331,16 @@ details:hover p {
     height: 2px;
     background-color: white;
     transition: width 0.3s ease, left 0.3s ease;
-
 }
 
 .category-skills button:hover::after {
     width: 100%;
     left: 0;
-
 }
 
 .category-skills button:active {
     transform: translateY(2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes skill-fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .skills-lists {
@@ -492,7 +358,6 @@ details:hover p {
 }
 
 .skills-lists p {
-
     text-align: center;
     color: white;
     padding: 0.6em;
@@ -506,28 +371,6 @@ details:hover p {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
-    .skills-lists {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        margin-left: 0;
-    }
-
-    .comp-main-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .category-skills {
-        flex-direction: row;
-        gap: 0.5em;
-        justify-content: center;
-    }
-
-    .skills-lists p {
-        font-size: 1rem;
-    }
-}
-
 .skill {
     display: flex;
     flex-direction: column;
@@ -538,7 +381,6 @@ details:hover p {
 .skill img {
     width: 80px;
     height: 80px;
-
 }
 
 .skill span {
@@ -547,7 +389,6 @@ details:hover p {
     white-space: nowrap;
     font-size: 16px;
     text-align: center;
-
 }
 
 .projectgrid {
@@ -615,17 +456,139 @@ details:hover p {
 .footer {
     margin-top: 10%;
     text-align: center;
-    border-top: 2px solid rgba(68, 68, 68, 0.44);
+    border-top: 2px solid rgba(0, 0, 0, 0.44);
 }
 
 .footer p {
     padding-top: 10px;
     font-size: 14px;
-    color: #333;
+    color: #000000;
     margin: 0;
 }
 
 .footer p:hover {
     color: #ffffff;
     transition: color 0.3s ease;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes skill-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes detailsFading {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 625px) {
+    :root {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    body {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .names {
+        text-align: center;
+    }
+
+    .main-text {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .menu li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .center {
+        padding-bottom: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column;
+    }
+
+    .event {
+        max-width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .skills-lists {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        margin-left: 0;
+    }
+
+    .comp-main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-skills {
+        gap: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .skills-lists p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 929px) {
+    .welcome {
+        font-size: 24px;
+    }
 }
