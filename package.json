@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "build:css": "postcss src/style.css -o dist/style.css",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -r https://github.com/Orabis/portfolio-LM.git"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
