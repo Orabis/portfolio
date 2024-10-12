@@ -17,7 +17,6 @@ html {
     background: linear-gradient(90deg, #2a2a2a, #101e62, #0334ff);
     background-size: 300% 300%;
     animation: gradientBackground 16s ease infinite;
-    -webkit-background-clip: text;
 }
 
 body {
@@ -422,17 +421,28 @@ details:hover p {
 }
 
 .slide a {
-    font-family: Consolas, Courier New, monospace;
+    font-family: New, monospace;
+    color: black;
+    font-weight: bold;
     white-space: normal;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
     text-decoration: none;
     position: absolute;
+    bottom: 10px;
+    left: 10px;
     transform-origin: center;
     pointer-events: none;
     touch-action: none;
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    max-width: 1200px;
+    font-size: 35px;
+    padding-right: 0.5em;
+    border: 2px solid black;
 }
 
 .slide a img {
@@ -441,12 +451,38 @@ details:hover p {
     height: auto;
 }
 
+.slide p {
+    font-family: New, monospace;
+    border-bottom: white 2px solid;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+}
+
+.slide:not(:hover) p {
+    opacity: 0;
+    transition: opacity 0.1s linear, transform 0.1s linear;
+}
+
+.slide:hover p {
+    opacity: 1;
+    transition-delay: 300ms;
+}
+
 .slide:hover a {
     transform: scale(1);
     opacity: 1;
     transition-delay: 100ms;
     pointer-events: auto;
     touch-action: auto;
+}
+
+.slide:nth-child(1):not(:has(~.slide:hover, ~.slide:focus-within)) p {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .slide:nth-child(1):not(:has(~.slide:hover, ~.slide:focus-within)) a {
@@ -529,6 +565,10 @@ details:hover p {
     .welcome {
         font-size: 24px;
     }
+
+    .slide p {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -563,6 +603,10 @@ details:hover p {
 
     .skills-lists p {
         font-size: 1rem;
+    }
+
+    .slide p {
+        font-size: 14px;
     }
 }
 
@@ -608,10 +652,18 @@ details:hover p {
     .slide a {
         font-size: 14px;
     }
+
+    .slide p {
+        border-bottom: none;
+    }
 }
 
 @media (max-width: 390px) {
     .intro {
         padding-top: 6em;
+    }
+
+    .slide p {
+        font-size: 12px;
     }
 }
