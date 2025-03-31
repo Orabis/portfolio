@@ -5,8 +5,8 @@
 	<link href="/vite.svg" rel="icon" type="image/svg+xml"/>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 	<title>Léo Merkel</title>
-  <script type="module" crossorigin src="/assets/index-D0TM5MMv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-D2FVL7xe.css">
+  <script type="module" crossorigin src="/assets/index-BK1d2gGQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index--HlfqKby.css">
 </head>
 
 <body class="blockInteract">
@@ -95,9 +95,17 @@
 					<img alt="" src="/nodejs.svg">
 					<span>Node.js</span>
 				</a>
-				<a class="skill" href="https://www.mysql.com/" target="_blank">
+				<a class="skill" href="https://mariadb.org/" target="_blank">
 					<img alt="" src="/mysql.svg">
 					<span>MySQL</span>
+				</a>
+				<a class="skill" href="https://www.mysql.com/" target="_blank">
+					<img alt="" src="/mariadb.svg">
+					<span>MariaDB</span>
+				</a>
+				<a class="skill" href="https://www.postgresql.org/" target="_blank">
+					<img alt="" src="/postgre.svg">
+					<span>Postgresql</span>
 				</a>
 				<a class="skill" href="https://www.djangoproject.com/" target="_blank">
 					<img alt="" src="/django.svg">
@@ -118,6 +126,10 @@
 				<a class="skill" href="https://docs.pytest.org/" target="_blank">
 					<img alt="" src="/pytest.svg">
 					<span>PyTest</span>
+				</a>
+				<a class="skill" href="https://www.docker.com/" target="_blank">
+					<img alt="" src="/docker-logo-blue.svg">
+					<span>Docker</span>
 				</a>
 			</div>
 			<div class="skills-lists" id="second-skills-list">
@@ -148,6 +160,10 @@
 				<a class="skill" href="https://getbootstrap.com/" target="_blank">
 					<img alt="" src="/bootstrap.svg">
 					<span>Bootstrap</span>
+				</a>
+				<a class="skill" href="https://primevue.org/" target="_blank">
+					<img alt="" src="/primevue.svg">
+					<span>PrimeVue</span>
 				</a>
 			</div>
 			<div class="skills-lists" id="third-skills-list">
@@ -189,47 +205,69 @@
 					<img alt="" src="/burpsuite.svg">
 					<span>BurpSuite</span>
 				</a>
+				<a class="skill" href="https://www.netacad.com/fr/cisco-packet-tracer" target="_blank">
+					<img alt="" src="/ciscopacket.svg">
+					<span>PacketTracer</span>
+				</a>
 			</div>
 		</div>
 	</section>
 	<section id="projects">
 		<h2 class="center">Mes Projets</h2>
-		<div class="projectgrid">
-			<span class="slide">
-				<a href="https://www.behance.net/orabis" target="_blank">CLICK
-					<img alt="" src="/click.svg">
-				</a>
-				<p>Portfolio créatif</p>
-				<img alt="" src="/myarts.png">
-			</span>
-			<span class="slide unusable">
-				<p>Portfolio sous vite.js</p>
-				<img alt="" src="/portfolioimg.png">
-			</span>
-			<span class="slide">
-				<a href="https://github.com/Orabis/Docs-Export-Gitlab" target="_blank">CLICK
-					<img alt="" src="/click.svg">
-				</a>
-				<p>Export Gitlab projects</p>
-				<img alt="" src="/exportgitlab1.png">
-
-
-			</span>
-			<span class="slide">
-				<a href="https://github.com/Orabis/Flick-Scrap" target="_blank">CLICK
-					<img alt="" src="/click.svg">
-				</a>
-				<p>Flickr Scraper</p>
-				<img alt="" src="/flickscrap.png">
-
-			</span>
+		<div class="proj-main-container">
+			<details open>
+				<summary><strong>Mes projets déployés disponibles sur <u><a href="https://orabis.fr" target="_blank" rel="noopener noreferrer">orabis.fr</a></u></strong></summary>
+				<div class="proj-container">
+					<div class="proj">
+						<a href="https://orabis.fr" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/orabishp.png" width="300" height="300"></a>
+						<p>Page d'accueil pour mes applications, développée avec Vite.js et Bootstrap.</p>
+					</div>
+					<div class="proj">
+						<a href="https://stock.orabis.fr" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/stockseeker.png" width="300" height="300"></a>
+						<p>E5 - Outil de gestion de stock avec Vue, PrimeVue et une API Django.</p>
+					</div>
+					<div class="proj">
+						<a href="https://export.orabis.fr" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/exportgitlab.png"></a>
+						<p>E5 - Exportation d'issues en PDF, développé avec Django.</p>
+					</div>
+					<div class="proj">
+						<a href="https://journal.orabis.fr" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/wordpress.png"></a>
+						<p>Site de veille technologique avec WordPress.</p>
+					</div>
+					<div class="proj">
+						<a href="https://cdn.orabis.fr" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/cdn.png"></a>
+						<p>CDN pour centraliser mes ressources.</p>
+					</div>
+					<div class="proj">
+						<a href="https://leo-merkel.me" target="_blank" rel="noopener noreferrer"><img alt="Logo de l'application" src="/portfolio.png"></a>
+						<p>Portfolio sous Vite.js et TypeScript, hébergé sur GitHub Pages.</p>
+					</div>
+				</div>
+			</details>
+			<details open>
+				<summary><strong>Mes projets non déployés</strong></summary>
+				<div class="proj-container">
+					<div class="proj">
+						<img class="no-animation" alt="Logo de l'application" src="/npm.png">
+						<p>Configuration de Nginx Proxy Manager, DNS, SSL et dockerisation de projets.</p>
+					</div>
+					<div class="proj">
+						<img class="no-animation" alt="Logo de l'application" src="/projgit.png" width="300" height="300">
+						<p>Participation au développement de Marmite (Flask, Vue), une app de partage de recettes.</p>
+					</div>
+					<div class="proj">
+						<img class="no-animation" alt="Logo de l'application" src="/projgit.png" width="300" height="300">
+						<p>Developpement test d'un site de création rapide de devoir maison (Laravel,PHP,Blade)</p>
+					</div>
+				</div>
+			</details>			
 		</div>
 	</section>
-	<section>
-		<div class="footer">
-			<p>© 2024 Léo Merkel</p>
-		</div>
-	</section>
-</div>
+</div>
+<section>
+	<div class="footer">
+		<p>© 2024 Léo Merkel</p>
+	</div>
+</section>
 </body>
 </html>
