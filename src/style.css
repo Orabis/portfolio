@@ -267,27 +267,6 @@ a {
     transition: width 2.5s ease;
 }
 
-details > summary {
-    list-style: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-details[open] p {
-    max-height: 100px;
-    opacity: 1;
-}
-
-details[open] summary ~ * {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
-
-details:hover p {
-    max-height: 100px;
-    opacity: 1;
-}
 
 .comp-main-container {
     border-left: 1px solid white;
@@ -498,6 +477,65 @@ details:hover p {
     grid-area: 1/1;
 }
 
+
+.proj-main-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 2rem;
+}
+
+.proj{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+}
+
+.proj p {
+    font-size: 20px;
+    color: white;
+    border-left: #ffffff 2px solid;
+    padding-left: 1em;
+    max-width: 300px;
+}
+
+.proj-container {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 2em;
+
+}
+.proj img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.proj img{
+    max-width: 300px;
+    height: auto;
+    max-height: 150px;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.no-animation:hover {
+    transform: none !important;
+}
+details{
+    padding: 1em;
+    background-color: #2a2a2a3d;
+    border-radius: 1rem;
+    margin-bottom: 1em;
+}
+
 .unusable {
     cursor: default;
 }
@@ -505,13 +543,13 @@ details:hover p {
 .footer {
     margin-top: 10%;
     text-align: center;
-    border-top: 2px solid rgba(0, 0, 0, 0.44);
+    border-top: 2px solid rgb(255, 255, 255);
 }
 
 .footer p {
     padding-top: 10px;
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     margin: 0;
 }
 
